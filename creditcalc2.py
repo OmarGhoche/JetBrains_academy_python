@@ -60,6 +60,7 @@ class LoanCalculator:
 calc1 = LoanCalculator()
 calc1.calculator()
 '''
+
 # ----------------------------------------- STAGE 4 ------------------------------------- #
 import argparse
 from math import ceil, log
