@@ -42,6 +42,7 @@ if name in rate_dict:
 else:
     score = 0
 '''
+
 score = 0
 
 # game logic
