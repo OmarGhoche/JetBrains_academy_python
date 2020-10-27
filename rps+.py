@@ -26,6 +26,7 @@ name = input("Enter your name: ")
 print('===========================================')
 print(f"\nHello, {name}\n")
 
+''' For JetBrains academy purposes
 # transforming into a dict mapping names to ratings
 with open('rating.txt', 'r') as rating:
     temp_list = rating.readlines()
@@ -40,6 +41,8 @@ if name in rate_dict:
     score = rate_dict[name]
 else:
     score = 0
+'''
+score = 0
 
 # game logic
 game = {
