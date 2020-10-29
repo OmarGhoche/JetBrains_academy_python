@@ -1,26 +1,85 @@
 from random import choice
 from sys import exit  # so I can close the program when needed
 
-print(*'HANGMAN', sep=' ')
+print("\n \t\t----------------")
+print(*' \t\tHANGMAN', sep=' ')
+print(" \t\t----------------\n")
 
 while 1:
+    # Hangman ascii art and wordbank by chrishorton (GitHub)
+    hangmanpics = ['''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''']
 
     menu = input('Type "play" to play the game, "exit" to quit: ')
 
-    if menu == "play":
+    if menu == "play":        
     
-        word = input("\nHanger! Choose a word to be guessed: ")
+        word = input("\nHanger! Choose a word to be guessed (lower case): ")
 
+        print("\nNow pass the device to the poor hanged man/woman")
+        print("Let's see if he/she can guess your word!")
+        
         right_basket = set()  # for letters in `word`
         wrong_basket = set()
-
+        
+        # function adapted from Alexander Kojevnikov (Stack Overflow)
         def is_ascii(s):
-          """ This function checkes if the `char` is btwn 97 and 122 
-              in ASCII code, tat is, if `char` is a, b, c .... or z"""
+            """ This function checkes if the `char` is btwn 97 and 122 
+                in ASCII code, tat is, if `char` is a, b, c .... or z"""
             return all(97 <= ord(c) <= 122 for c in s)
 
+        print("\nYou got 6 chances to guess wrong!")
+        
         i = 0
-        while i < 8:  # user has 8 lives!
+        while i < 6:  # user has 6 lives!
             
             # If basket and set(word) have same length, then user guessed all letters!
             if len(right_basket) != len(set(word)):
@@ -52,6 +111,7 @@ while 1:
                             print("No such letter in the word")
                             # user only get hanged if letter is not in word!
                             i += 1
+                            print(hangmanpics[i])
                 else:
                     print("It is not an ASCII lowercase letter")
             else:
@@ -61,7 +121,7 @@ while 1:
                 print("You guessed the word!")
                 print("You survived!")
                 exit(0)
-        # this block executes when all chances (8) are used!
+        # this block executes when all chances (6) are used!
         print("You lost!")
         print()
 
