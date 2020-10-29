@@ -1,5 +1,4 @@
 from getpass import getpass  # to input user text without writing it to the console
-from random import choice
 from sys import exit  # so I can close the program when needed
 from time import sleep  # to control program execution
 
