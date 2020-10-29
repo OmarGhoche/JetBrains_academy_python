@@ -4,9 +4,11 @@ from sys import exit  # so I can close the program when needed
 from time import sleep  # to control program execution
 
 
-print("\n\t\t----------------")
-print(*'\t\tHANGMAN', sep=' ')
-print("\t\t----------------\n")
+print("\n\t\t-----------------")
+print('\t\t  H A N G M A N', end="    ")
+print("by Omar")
+print("\t\t-----------------\n")
+
 
 while 1:
     # adapted from Hangman ascii art by chrishorton (GitHub)
@@ -89,10 +91,10 @@ while 1:
             """ This function checkes if the `char` is btwn 97 and 122 
                 in ASCII code, tat is, if `char` is a, b, c .... or z"""
             return all(97 <= ord(c) <= 122 for c in s)
-        print("\nYou got 7 chances to guess wrong!")
+        print("\nYou got 8 chances to guess wrong!")
         
         i = 0
-        while i < 7:  # user has 7 lives!
+        while i < 8:  # user has 8 lives!
             
             sleep(2)
             # If basket and set(word) have same length, then user guessed all letters!
@@ -102,7 +104,7 @@ while 1:
                 # '-' is added to `hint` if word's letter is not found
                 hint = [c if c in right_basket else '-' for c in word]
                 print(hangmanpics[i])
-                print(f"\t\t\t\t{''.join(hint)}")
+                print(f"\t\t\t\t{''.join(hint)}\n")
 
                 ltr = input("\t\t\t\tInput a letter: ")
                 
@@ -132,13 +134,13 @@ while 1:
             else:
                 # if user guesses word:
                 print()
-                print(word)
+                print('\t\t\t\t' + word)
                 print("\n\t\t\t\tYou guessed the word!")
-                print("\t\t\t\tYou survived!")
+                print("\t\t\t\tYou survived!\n")
                 exit(0)
-        # this block executes when all chances (7) are used!
+        # this block executes when all chances (8) are used!
         sleep(1)
-        print("\n\t\t\t\tYou died!", flush=True)
+        print("\n\t\t\t\tYOU DIED!", flush=True)
         print("\n\t\t\t\tAt least you had no chance to find out that you are a LOSER!!", flush=True)
         sleep(2)
         print()
@@ -148,3 +150,4 @@ while 1:
 
     else:
         continue
+    
