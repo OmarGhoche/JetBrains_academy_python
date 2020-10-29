@@ -6,7 +6,7 @@ print(*' \t\tHANGMAN', sep=' ')
 print(" \t\t----------------\n")
 
 while 1:
-    # Hangman ascii art and wordbank by chrishorton (GitHub)
+    # Hangman ascii art by chrishorton (GitHub)
     hangmanpics = ['''
   +---+
   |   |
